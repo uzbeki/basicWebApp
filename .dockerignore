@@ -1,0 +1,24 @@
+# Ignore node_modules directory
+node_modules
+
+# Ignore any files or directories that start with a dot
+.*
+
+# Ignore any log files
+*.log
+
+# Ignore any temporary files
+*.tmp
+
+# Ignore any files or directories that are specific to your development environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore any files or directories that are specific to your IDE or editor
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
