@@ -2,28 +2,11 @@
 
 This example contains everything needed to get a Next.js development and production environment up and running with Docker Compose.
 
-## Benefits of Docker Compose
-
-- Develop locally without Node.js or TypeScript installed ✨
-- Easy to run, consistent development environment across macOS, Windows, and Linux teams
-- Run multiple Next.js apps, databases, and other microservices in a single deployment
-- Multistage builds combined with [Output Standalone](https://nextjs.org/docs/advanced-features/output-file-tracing#automatically-copying-traced-files) outputs up to 85% smaller apps (Approximately 110 MB compared to 1 GB with create-next-app)
-- Easy configuration with YAML files
-
 ## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-docker-compose with-docker-compose-app
-```
+Clone this repository to your local machine.
 
 ```bash
-yarn create next-app --example with-docker-compose with-docker-compose-app
-```
-
-```bash
-pnpm create next-app --example with-docker-compose with-docker-compose-app
+git clone https://github.com/uzbeki/basicWebApp.git
 ```
 
 Optionally, after the installation is complete:
@@ -54,7 +37,7 @@ docker compose -f docker-compose.dev.yml up
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## Production
 
@@ -99,3 +82,12 @@ docker kill $(docker ps -aq) && docker rm $(docker ps -aq)
 # Free space
 docker system prune -af --volumes
 ```
+
+
+# Testing
+Testing is done with Jest and React Testing Library. To run the tests, run `npm run test` or `yarn test` or `pnpm test`.
+Tests are located in the `__tests__` directory. 
+
+# Database used
+Sqlite3 is used to store column names and their hashes. 
+> Beware that sqlite3 is not suitable for production. It is used here for simplicity. If you stop docker container, all data will be lost.
