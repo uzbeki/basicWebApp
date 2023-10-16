@@ -91,3 +91,12 @@ Tests are located in the `__tests__` directory.
 # Database used
 Sqlite3 is used to store column names and their hashes. 
 > Beware that sqlite3 is not suitable for production. It is used here for simplicity. If you stop docker container, all data will be lost.
+
+# Running without docker
+If you want to run the app without docker, you need to install nodejs and npm.
+
+Then inside `next-app` directory,  run `npm install` or `yarn install` or `pnpm install` to generate a lockfile.
+
+After that, run `npm run dev` or `yarn dev` or `pnpm dev` to start the app in development mode.
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
